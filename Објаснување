@@ -39,3 +39,11 @@ void CompareSignalFiltered(float filteredSignal) {
 // Исто така, печати го името на бојата на серискиот монитор.
 }
 CompareSignalFiltered() споредува филтрираниот сензорски сигнал со низа од предефинирани прагови и ги поставува црвениот, зелениот и синиот дел на RGB LED соодветно. Исто така, печати го името на бојата на серискиот монитор.
+
+void RGBColor(int Rcolor, int Gcolor, int Bcolor) {
+analogWrite(Rpin, Rcolor);
+analogWrite(Gpin, Gcolor);
+analogWrite(Bpin, Bcolor);
+delay(delayLEDS);
+}
+RGBColor() е помошна функција која ги поставува интензитетите на црвениот, зелениот и синиот дел на RGB LED врз основа на дадените вредности за боја. Исто така, додава задоцнување за да се контролира колку долго LED останува во одредена состојба на боја.

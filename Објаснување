@@ -13,3 +13,17 @@ sensorPin е аналогниот пин (A0) на кој е поврзан се
 sensorValue го чува моменталното сензорско отчитување.
 filteredSignal се користи за чување на филтрирана верзија на сензорското отчитување.
 filteredSignalValues е низа на прагови кои се користат за одредување на бојата на LED врз основа на филтрираниот сензорски сигнал.
+
+void MainFunction() {
+sensorValue = (float) analogRead(sensorPin) * (5.0 / 1024.0);
+FilterSignal(sensorValue);
+Serial.print(sensorValue);
+Serial.print(" ");
+Serial.println(filteredSignal);
+CompareSignalFiltered(filteredSignal);
+}
+MainFunction() е одговорна за:
+Читање на аналогната вредност од sensorPin и конвертирање во напон користејќи фактор за скалирање.
+Филтрирање на сензорскиот сигнал користејќи едноставен филтер со тежини на просек.
+Печатење на суровата вредност на сензорот и филтрираната вредност на серискиот монитор.
+Повикување на CompareSignalFiltered() за одредување на бојата на LED врз основа на филтрираниот сигнал.
